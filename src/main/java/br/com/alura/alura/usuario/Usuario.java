@@ -12,7 +12,7 @@ import java.util.List;
 @Table(name = "usuarios")
 public class Usuario implements UserDetails {
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String email;
