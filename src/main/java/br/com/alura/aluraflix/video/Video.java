@@ -1,5 +1,6 @@
 package br.com.alura.aluraflix.video;
 
+import br.com.alura.aluraflix.categoria.Categoria;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,6 +22,9 @@ public class Video {
     private String descricao;
     @Column(length = 500)
     private String url;
+
+    @ManyToOne
+    private Categoria categoria;
 
     public Video(String titulo, String descricao, String url) {
         this.titulo = titulo;
