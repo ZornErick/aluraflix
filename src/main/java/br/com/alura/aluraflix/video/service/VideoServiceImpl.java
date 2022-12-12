@@ -1,5 +1,7 @@
 package br.com.alura.aluraflix.video.service;
 
+import br.com.alura.aluraflix.categoria.Categoria;
+import br.com.alura.aluraflix.categoria.CategoriaRepo;
 import br.com.alura.aluraflix.util.crud.Form;
 import br.com.alura.aluraflix.util.crud.UpdateForm;
 import br.com.alura.aluraflix.util.exception.NotFoundException;
@@ -19,10 +21,12 @@ import java.util.Optional;
 public class VideoServiceImpl implements VideoService {
 
     private final VideoRepo videoRepo;
+    private final CategoriaRepo categoriaRepo;
 
     @Autowired
-    public VideoServiceImpl(VideoRepo videoRepo) {
+    public VideoServiceImpl(VideoRepo videoRepo, CategoriaRepo categoriaRepo) {
         this.videoRepo = videoRepo;
+        this.categoriaRepo = categoriaRepo;
     }
 
     @Override
@@ -40,21 +44,29 @@ public class VideoServiceImpl implements VideoService {
     @Override
     public Video create(Form<Video> form) {
         VideoForm videoForm = (VideoForm) form;
-        return videoRepo.save(videoForm.convert());
+        Optional<Categoria> categoria = categoriaRepo.findById(videoForm.getCategoriaId());
+        if(categoria.isEmpty()) throw new NotFoundException("Categoria não encontrada!");
+        return videoRepo.save(videoForm.convert(categoria.get()));
     }
 
     @Override
     public Video update(Long id, UpdateForm<Video> updateForm) {
         VideoUpdateForm videoUpdateForm = (VideoUpdateForm) updateForm;
         Optional<Video> video = videoRepo.findById(id);
+        Optional<Categoria> categoria = categoriaRepo.findById(videoUpdateForm.getCategoriaId());
         if(video.isEmpty()) throw new NotFoundException("Vídeo não encontrado!");
-        return videoUpdateForm.update(video.get());
+        if(categoria.isEmpty()) throw new NotFoundException("Categoria não encontrada!");
+        return videoUpdateForm.update(video.get(), categoria.get());
     }
 
     @Override
     public void delete(Long id) {
-        Optional<Video> video = videoRepo.findById(id);
-        if(video.isEmpty()) throw new NotFoundException("Vídeo não encontrado!");
+        if(videoRepo.findById(id).isEmpty()) throw new NotFoundException("Vídeo não encontrado!");
         videoRepo.deleteById(id);
+    }
+
+    @Override
+    public List<Video> findVideosByTitulo(String titulo) {
+        return videoRepo.findAllByTitulo(titulo);
     }
 }

@@ -26,9 +26,10 @@ public class Video {
     @ManyToOne
     private Categoria categoria;
 
-    public Video(String titulo, String descricao, String url) {
+    public Video(String titulo, String descricao, String url, Categoria categoria) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.url = url;
+        this.categoria = categoria;
     }
 }
