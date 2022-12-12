@@ -1,5 +1,6 @@
 package br.com.alura.aluraflix.video;
 
+import br.com.alura.aluraflix.categoria.Categoria;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -15,11 +16,14 @@ public class VideoDto {
     private String descricao;
     private String url;
 
+    private Categoria categoria;
+
     public VideoDto(Video video) {
         this.id = video.getId();
         this.titulo = video.getTitulo();
         this.descricao = video.getDescricao();
         this.url = video.getUrl();
+        this.categoria = video.getCategoria();
     }
 
     public List<VideoDto> convert(List<Video> videos) {
