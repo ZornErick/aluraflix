@@ -23,9 +23,6 @@ public class VideoController {
 
     @GetMapping
     public ResponseEntity<List<VideoDto>> findAllVideos(String search) {
-        if(search.isEmpty()) {
-            return ResponseEntity.ok(new VideoDto().convert(videoService.findAll()));
-        }
         return ResponseEntity.ok(new VideoDto().convert(videoService.findVideosByTitulo(search)));
     }
 

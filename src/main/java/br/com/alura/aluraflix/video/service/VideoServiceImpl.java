@@ -67,6 +67,7 @@ public class VideoServiceImpl implements VideoService {
 
     @Override
     public List<Video> findVideosByTitulo(String titulo) {
+        if(titulo == null) return findAll();
         return videoRepo.findAllByTitulo(titulo);
     }
 }
