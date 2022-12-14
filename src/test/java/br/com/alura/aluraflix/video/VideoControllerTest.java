@@ -73,7 +73,24 @@ class VideoControllerTest {
     @Test
     void deveCriarUmVideoERetornarOVideoCriado() throws Exception {
         URI uri = new URI("/videos");
-        String json = "{\"titulo\":\"Video4\",\"descricao\":\"Quarto video\",\"url\":\"https://www.video4.com\",\"categoriaId\":1}";
+        String json = "{\"titulo\":\"Video5\",\"descricao\":\"Quinto video\",\"url\":\"https://www.video5.com\",\"categoriaId\":1}";
+        mockMvc
+                .perform(MockMvcRequestBuilders
+                        .post(uri)
+                        .content(json)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(MockMvcResultMatchers
+                        .status()
+                        .is(201))
+                .andExpect(MockMvcResultMatchers
+                        .content()
+                        .json("{\"id\":5,\"titulo\":\"Video5\",\"descricao\":\"Quinto video\",\"url\":\"https://www.video5.com\",\"categoria\":{\"id\":1,\"titulo\":\"Categoria1\",\"cor\":\"BRANCA\"}}"));
+    }
+
+    @Test
+    void deveCriarUmVideoSemCategoriaERetornarOVideoCriadoComACategoriaLivre() throws Exception {
+        URI uri = new URI("/videos");
+        String json = "{\"titulo\":\"Video4\",\"descricao\":\"Quarto video\",\"url\":\"https://www.video4.com\"}";
         mockMvc
                 .perform(MockMvcRequestBuilders
                         .post(uri)
