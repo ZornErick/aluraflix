@@ -1,7 +1,7 @@
-package br.com.alura.aluraflix.video.service;
+package br.com.alura.aluraflix.domain.video.service;
 
+import br.com.alura.aluraflix.domain.video.Video;
 import br.com.alura.aluraflix.util.crud.CrudService;
-import br.com.alura.aluraflix.video.Video;
 
 import java.util.List;
 

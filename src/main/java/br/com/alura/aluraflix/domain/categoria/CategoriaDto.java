@@ -1,4 +1,4 @@
-package br.com.alura.aluraflix.categoria;
+package br.com.alura.aluraflix.domain.categoria;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

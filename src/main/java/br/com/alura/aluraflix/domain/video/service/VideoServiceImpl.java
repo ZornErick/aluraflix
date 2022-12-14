@@ -1,14 +1,14 @@
-package br.com.alura.aluraflix.video.service;
+package br.com.alura.aluraflix.domain.video.service;
 
-import br.com.alura.aluraflix.categoria.Categoria;
-import br.com.alura.aluraflix.categoria.CategoriaRepo;
+import br.com.alura.aluraflix.domain.categoria.Categoria;
+import br.com.alura.aluraflix.domain.categoria.CategoriaRepo;
+import br.com.alura.aluraflix.domain.video.Video;
+import br.com.alura.aluraflix.domain.video.VideoForm;
+import br.com.alura.aluraflix.domain.video.VideoRepo;
+import br.com.alura.aluraflix.domain.video.VideoUpdateForm;
 import br.com.alura.aluraflix.util.crud.Form;
 import br.com.alura.aluraflix.util.crud.UpdateForm;
 import br.com.alura.aluraflix.util.exception.NotFoundException;
-import br.com.alura.aluraflix.video.Video;
-import br.com.alura.aluraflix.video.VideoForm;
-import br.com.alura.aluraflix.video.VideoRepo;
-import br.com.alura.aluraflix.video.VideoUpdateForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

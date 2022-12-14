@@ -1,4 +1,4 @@
-package br.com.alura.aluraflix.categoria;
+package br.com.alura.aluraflix.domain.categoria;
 
 import br.com.alura.aluraflix.util.crud.Form;
 import lombok.Getter;

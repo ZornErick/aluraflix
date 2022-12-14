@@ -1,7 +1,7 @@
-package br.com.alura.aluraflix.categoria;
+package br.com.alura.aluraflix.domain.categoria;
 
-import br.com.alura.aluraflix.categoria.service.CategoriaService;
-import br.com.alura.aluraflix.video.VideoDto;
+import br.com.alura.aluraflix.domain.categoria.service.CategoriaService;
+import br.com.alura.aluraflix.domain.video.VideoDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,8 +1,8 @@
-package br.com.alura.aluraflix.categoria.service;
+package br.com.alura.aluraflix.domain.categoria.service;
 
-import br.com.alura.aluraflix.categoria.Categoria;
+import br.com.alura.aluraflix.domain.categoria.Categoria;
 import br.com.alura.aluraflix.util.crud.CrudService;
-import br.com.alura.aluraflix.video.Video;
+import br.com.alura.aluraflix.domain.video.Video;
 
 import java.util.List;
 

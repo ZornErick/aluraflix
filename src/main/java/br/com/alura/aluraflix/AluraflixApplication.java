@@ -1,7 +1,7 @@
 package br.com.alura.aluraflix;
 
-import br.com.alura.aluraflix.categoria.Categoria;
-import br.com.alura.aluraflix.categoria.CategoriaRepo;
+import br.com.alura.aluraflix.domain.categoria.Categoria;
+import br.com.alura.aluraflix.domain.categoria.CategoriaRepo;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

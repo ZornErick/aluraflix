@@ -1,6 +1,6 @@
-package br.com.alura.aluraflix.video;
+package br.com.alura.aluraflix.domain.video;
 
-import br.com.alura.aluraflix.video.service.VideoService;
+import br.com.alura.aluraflix.domain.video.service.VideoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

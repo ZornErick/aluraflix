@@ -1,4 +1,4 @@
-package br.com.alura.aluraflix.video;
+package br.com.alura.aluraflix.domain.video;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

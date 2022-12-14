@@ -1,6 +1,6 @@
-package br.com.alura.aluraflix.video;
+package br.com.alura.aluraflix.domain.video;
 
-import br.com.alura.aluraflix.categoria.Categoria;
+import br.com.alura.aluraflix.domain.categoria.Categoria;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
