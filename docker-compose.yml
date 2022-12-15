@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  server:
+    build: .
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysqldb
+  mysqldb:
+    platform: linux/x86_64
+    image: "mysql:8.0.28"
+    restart: always
+    ports:
+      - 3307:3306
+    environment:
+      MYSQL_DATABASE: aluraflix
+      MYSQL_USER: zorn
+      MYSQL_PASSWORD: Macaco@1998
+      MYSQL_ROOT_PASSWORD: Macaco@1998

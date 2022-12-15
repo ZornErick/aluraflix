@@ -11,7 +11,7 @@
     <groupId>br.com.alura</groupId>
     <artifactId>aluraflix</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>aluraflix</name>
     <description>aluraflix</description>
     <properties>
