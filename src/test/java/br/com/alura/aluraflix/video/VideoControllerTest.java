@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.MediaType;
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
+import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -20,6 +21,7 @@ import java.net.URI;
 @ActiveProfiles("test")
 @AutoConfigureMockMvc(addFilters = false)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 class VideoControllerTest {
 
     @Autowired
@@ -28,7 +30,7 @@ class VideoControllerTest {
     private MockMvc mockMvc;
 
     @BeforeAll
-    void initDatabase() {
+    void populateDatabase() {
         ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
         populator.addScript(new ClassPathResource("data.sql"));
         populator.execute(dataSource);
