@@ -1,8 +1,8 @@
 <h1> ALURAFLIX </h1>
-<p> Projeto desenvolvido para o Alura Challenge Backend </p>
+<p> Projeto desenvolvido para o Alura Challenge Backend; </p>
 
 <h2> Objetivo do Projeto </h2>
-<p> Desenvolver uma api para gerenciar videos. </p>
+<p> Desenvolver uma api para gerenciar vídeos. </p>
 
 <h2> Tecnologias Utilizadas </h2>
 
